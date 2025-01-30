@@ -1,4 +1,5 @@
 function tests = testMonospinnerDynamics
+    clc;
     tests = functiontests(localfunctions);
 end
 

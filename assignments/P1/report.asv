@@ -1,0 +1,42 @@
+%% Programming Homework 1 - (Aidan Murray)
+clear; close all; clc;
+
+
+
+%% Task 5
+u = [2.3];
+[tout, xout] = ode45(@(t,x) monospinnerDynamics(t, x, u), [0 2], zeros(12, 1));
+
+% plotState;History(tout, xout);
+
+% Answer to Task 5:
+% Initially, the angular rate q grows the fastest. This is becuase
+% when the mono spinner starts up the thrust from the prop immediatly
+% causes the aircraft to increase in pitch.
+
+
+
+%% Task 6
+
+u = [0.0];
+X0 = [0; 0; 0;   % Position
+      0; 0; 0;   % Orientation
+      1; 1; -20; % Velocity
+      0; -5; 0]; % Angular Rate
+
+[tout, xout] = ode45(@(t,x) monospinnerDynamics(t, x, u), [0 2], X0);
+
+plotStateHistory(tout, xout);
+monospinnerAnimation(tout, xout);
+
+%  Answer to Task 6:
+%  The term w oscillate
+
+
+%%
+% (answer to Task 6 question here)
+
+
+%% Task 7
+%
+% (answer to Task 7 question here)
